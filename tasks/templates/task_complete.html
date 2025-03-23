@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{{ task.title }}</h1>
+
+<form method="POST">
+{% csrf_token %} {{ form.as_p }}
+<button type="submit">Actualizar tarea</button>
+{% if error %}
+<p style="color: red">{{ error }}</p>
+{% endif %}
+</form>
+
+<form method="POST">
+{% csrf_token %} 
+    <button >
+        Complete
+    </button>
+
+{% endblock %}
